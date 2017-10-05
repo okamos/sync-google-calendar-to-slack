@@ -1,5 +1,6 @@
 const path = require('path');
 const GasPlugin = require('gas-webpack-plugin');
+const MinifyPlugin = require('babel-minify-webpack-plugin');
 
 module.exports = {
   entry: './index.js',
@@ -22,6 +23,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new GasPlugin
+    new GasPlugin,
+    new MinifyPlugin()
   ]
 };
