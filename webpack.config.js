@@ -4,7 +4,7 @@ const GasPlugin = require('gas-webpack-plugin');
 module.exports = {
   entry: './index.js',
   output: {
-    filename: 'コード.js',
+    filename: 'bundle.js',
     path: path.resolve(__dirname, './src')
   },
   module: {
