@@ -3,17 +3,7 @@
 /*global CalendarApp */
 /*global UrlFetchApp */
 /*global Logger */
-function onEvent() {
-  var SCRIPT_PROPERTIES = PropertiesService.getScriptProperties();
-  var SLACK_TOKEN = SCRIPT_PROPERTIES.getProperty('SLACK_TOKEN');
-  var CALENDAR_ID = SCRIPT_PROPERTIES.getProperty('CALENDAR_ID');
-
-  var events = getEvent(CALENDAR_ID);
-  var envelope = buildEnvelope(events);
-  setStatus(envelope, SLACK_TOKEN);
-}
-
-function getEvent(id) {
+const getEvents = (id) => {
   var now = new Date();
   var fiveMinutesAgo = new Date(now.getTime() + (5 * 60 * 1000));
   var calendar = CalendarApp.getCalendarById(id);
@@ -26,15 +16,15 @@ function getEvent(id) {
     }
     return -1;
   });
-}
+};
 
-function buildEnvelope(events) {
+const buildEnvelope = (events) => {
   var profile = {
     'status_emoji': '',
     'status_text': ''
   };
   events.forEach(function(event) {
-    var title = event.getTitle();
+    const title = event.getTitle();
     
     if (/休暇|有給|休み|やすみ/i.test(title)) {
       profile['status_emoji'] = ':palm_tree:';
@@ -59,10 +49,20 @@ function buildEnvelope(events) {
   });
 
   return encodeURIComponent(JSON.stringify(profile));
-}
+};
 
-function setStatus(envelope, token) {
+const setStatus = (envelope, token) => {
   var result = UrlFetchApp.fetch('https://slack.com/api/users.profile.set?token=' + token + '&profile=' + envelope);
 
   Logger.log(result);
-}
+};
+
+global.onEvent = () => {
+  const SCRIPT_PROPERTIES = PropertiesService.getScriptProperties();
+  const SLACK_TOKEN = SCRIPT_PROPERTIES.getProperty('SLACK_TOKEN');
+  const CALENDAR_ID = SCRIPT_PROPERTIES.getProperty('CALENDAR_ID');
+
+  const events = getEvents(CALENDAR_ID);
+  const envelope = buildEnvelope(events);
+  setStatus(envelope, SLACK_TOKEN);
+};

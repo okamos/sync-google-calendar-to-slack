@@ -27,7 +27,8 @@ jobs:
       - run: yarn test
 
       - run:
-          name: deploy
+          name: build and deploy
           command: |
             echo ${gapps} > $HOME/.gapps
+            yarn build
             yarn deploy
