@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "test": "yarn lint",
-    "lint": "eslint src",
+    "lint": "eslint index.js",
     "build": "webpack",
     "deploy": "gapps upload"
   },

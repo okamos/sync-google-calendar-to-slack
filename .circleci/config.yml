@@ -30,5 +30,6 @@ jobs:
           name: build and deploy
           command: |
             echo ${gapps} > $HOME/.gapps
+            echo ${gapps_config} > ./gapps.config.json
             yarn build
             yarn deploy
