@@ -24,5 +24,10 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
         
-      # run tests!
       - run: yarn test
+
+      - run:
+          name: deploy
+          command: |
+            echo ${gapps} > $HOME/.gapps
+            yarn deploy

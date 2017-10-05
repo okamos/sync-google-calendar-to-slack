@@ -8,10 +8,12 @@
   "license": "MIT",
   "scripts": {
     "test": "yarn lint",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "deploy": "gapps upload"
   },
   "dependencies": {},
   "devDependencies": {
-    "eslint": "^4.8.0"
+    "eslint": "^4.8.0",
+    "node-google-apps-script": "^1.1.5"
   }
 }
