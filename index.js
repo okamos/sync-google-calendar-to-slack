@@ -26,9 +26,10 @@ const buildEnvelope = (events) => {
   events.forEach(function(event) {
     const title = event.getTitle();
 
-    const dict = require('./dict.json');
+    const items = require('./dict.json');
 
-    for (let item of dict) {
+    for (let i = 0; i < items.length; i++) {
+      const item = items[i];
       const re = new RegExp(item['regexp'], 'i');
       if (re.test(title)) {
         profile['status_emoji'] = item['status_emoji'];
