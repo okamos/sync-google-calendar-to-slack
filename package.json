@@ -1,0 +1,16 @@
+{
+  "name": "sync-google-calendar-to-slack",
+  "version": "0.1",
+  "description": "Sync Google Calendar to Slack status",
+  "main": "src/コード.js",
+  "repository": "git@github.com:okamos/sync-google-calendar-to-slack.git",
+  "author": "okamos <himinato.k@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint src"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^4.8.0"
+  }
+}

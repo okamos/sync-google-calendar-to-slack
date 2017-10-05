@@ -1,3 +1,8 @@
+/*eslint no-unused-vars: ["error", { "varsIgnorePattern": "onEvent" }] */
+/*global PropertiesService */
+/*global CalendarApp */
+/*global UrlFetchApp */
+/*global Logger */
 function onEvent() {
   var SCRIPT_PROPERTIES = PropertiesService.getScriptProperties();
   var SLACK_TOKEN = SCRIPT_PROPERTIES.getProperty('SLACK_TOKEN');
