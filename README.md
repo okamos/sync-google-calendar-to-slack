@@ -23,6 +23,7 @@ Sync Google Calendar to Slack your status
   * [regexp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) set patterns. e.g. `vacation|dont work|day off`
   * `status_emoji` set [emoji](https://www.webpagefx.com/tools/emoji-cheat-sheet/). You can use [Custom Emoji](https://get.slack.help/hc/en-us/articles/206870177-Create-custom-emoji)
   * `status_text` set your status.
+1. Push to github, or build and deploy your local machine.
 
 ## Build and Deploy
 If you using CircleCI. It is not necessary local build and deploy.
