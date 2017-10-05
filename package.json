@@ -19,6 +19,7 @@
     "babel-preset-es2015": "^6.24.1",
     "eslint": "^4.8.0",
     "gas-webpack-plugin": "^0.2.1",
+    "json-loader": "^0.5.7",
     "node-google-apps-script": "^1.1.5",
     "webpack": "^3.6.0"
   }

@@ -25,26 +25,16 @@ const buildEnvelope = (events) => {
   };
   events.forEach(function(event) {
     const title = event.getTitle();
-    
-    if (/休暇|有給|休み|やすみ/i.test(title)) {
-      profile['status_emoji'] = ':palm_tree:';
-      profile['status_text'] = '休み';
-      return;
-    }
-    if (/自宅|remote/i.test(title)) {
-      profile['status_emoji'] = ':house_with_garden:';
-      profile['status_text'] = '自宅作業';
-      return;
-    }
-    if (/外出|往訪/i.test(title)) {
-      profile['status_emoji'] = ':walking:';
-      profile['status_text'] = '外出中';
-      return;
-    }
-    if (/ミーティング|MTG|会議/i.test(title)) {
-      profile['status_emoji'] = ':spiral_calendar_pad:';
-      profile['status_text'] = 'ミーティング中';
-      return;
+
+    const dict = require('./dict.json');
+
+    for (let item of dict) {
+      const re = new RegExp(item['regexp'], 'i');
+      if (re.test(title)) {
+        profile['status_emoji'] = item['status_emoji'];
+        profile['status_text'] = item['status_text'];
+        break;
+      }
     }
   });
 

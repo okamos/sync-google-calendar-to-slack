@@ -1,0 +1,22 @@
+[
+  {
+    "regexp": "休暇|有給|休み|やすみ",
+    "status_emoji": ":palm_tree:",
+    "status_text": "休み"
+  },
+  {
+    "regexp": "自宅|remote",
+    "status_emoji": ":house_with_garden:",
+    "status_text": "自宅作業"
+  },
+  {
+    "regexp": "外出|往訪",
+    "status_emoji": ":walking:",
+    "status_text": "外出中"
+  },
+  {
+    "regexp": "ミーティング|MTG|会議",
+    "status_emoji": ":spiral_calendar_pad:",
+    "status_text": "ミーティング中"
+  }
+]
