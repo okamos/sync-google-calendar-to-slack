@@ -18,5 +18,10 @@
     "regexp": "ミーティング|MTG|会議",
     "status_emoji": ":spiral_calendar_pad:",
     "status_text": "ミーティング中"
+  },
+  {
+    "regexp": "dental|歯科|歯医者",
+    "status_emoji": ":grimacing:",
+    "status_text": "歯科医院"
   }
 ]
