@@ -23,5 +23,10 @@
     "regexp": "dental|歯科|歯医者",
     "status_emoji": ":grimacing:",
     "status_text": "歯科医院"
+  },
+  {
+    "regexp": "lunch|ランチ|昼飯|昼食",
+    "status_emoji": ":bento:",
+    "status_text": "ランチ"
   }
 ]
